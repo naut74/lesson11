@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đoán số</title>
+    <style>
+        body{
+            background-color: rgb(47, 47, 47);
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            gap: 10px;
+            text-align: center;
+            color: #fff;
+        }
+        input[type='button']{
+            appearance: none;
+            -webkit-appearance: none;
+            cursor: pointer;
+            padding: 15px 30px;
+            background-color: #fff;
+            border-radius: 5px;
+            font-weight: 600;
+            color: white;
+            font-size: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        input[type='button']:hover {
+            background-color: #45a049; /* Màu nền khi hover */
+            transform: translateY(-2px); /* Hiệu ứng di chuyển lên */
+        }
+
+        input[type='button']:active {
+            transform: translateY(1px); /* Hiệu ứng nhấn xuống */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Giảm bóng đổ khi nhấn */
+        }
+    </style>
+</head>
+<body>
+    <h1>Trò Chơi Đoán Số</h1>
+    <p>Hãy đoán số ngẫu nhiên từ 1 đến n mà bạn đã nhập!</p>
+    <button onclick="check()" type="button">Chơi</button>
+    <script>
+        function check(){
+            let count=0;
+            let n=parseInt(prompt('Số bạn muốn đoán trong khoảng lớn nhất là bao nhiêu?'))
+            if(n>=1){
+                let randomnum=Math.floor(Math.random()*n)+1;
+                while(true){
+                    let num=parseInt(prompt('Nhập số bạn đoán'));
+                    count++;
+                    if(num===randomnum){
+                        alert('Đoán trúng rồi');
+                        break;
+                    }
+                    else if (num>n){
+                        alert('Số bạn nhập vượt quá giới hạn. Vui lòng nhập số từ 1 đến ' + n);
+                        continue;
+                    }
+                    else{
+                        if(count===3){
+                            alert('Bạn đã hết lượt đoán. Số đúng là '+randomnum);
+                            break;
+                        }
+                        else if(num>randomnum){
+                            alert('số bạn nhập đang lớn hơn');
+                        }
+                        else if(num<randomnum){
+                            alert('số bạn nhập đang bé hơn');
+                        }
+                    }
+                }
+            }
+            else{
+                alert('Vui lòng nhập số lớn hơn hoặc bằng 1');
+            }
+        }
+        
+    </script>
+</body>
+</html>

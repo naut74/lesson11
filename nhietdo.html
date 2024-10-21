@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhiệt độ</title>
+</head>
+<body>
+    <script>
+        let temp=parseInt(prompt('Nhập nhiệt độ'));
+        let count=0;
+        while(temp>20 || temp<100){
+            if(temp<20){
+                alert('Tăng nhiệt độ lên nào! Lạnh quá');
+            }
+            else if(temp>100){
+                alert('Giảm tí nhiệt đeeeeeeeeeeeeeeee');
+            }
+            else{
+                alert('Thoải mái rồi đấy');
+                break;
+            }
+            temp=parseInt(prompt('Nhập lại nhiệt độ'));
+        }
+    </script>
+</body>
+</html>

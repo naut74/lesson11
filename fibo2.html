@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Chia Hết Cho 5</title>
+</head>
+<body>
+    <h1>Số Fibonacci đầu tiên chia hết cho 5</h1>
+    <p id="result"></p>
+
+    <script>
+        function fibonacci() {
+            let fib = [0, 1];
+            let i = 2;
+            
+            while (true) {
+                fib[i] = fib[i - 1] + fib[i - 2];
+                if (fib[i] % 5 === 0) {
+                    return fib[i];
+                }
+                i++;
+            }
+        }
+
+        document.getElementById("result").textContent = "Số Fibonacci đầu tiên chia hết cho 5 là: " + fibonacci();
+    </script>
+
+    <!-- 
+    <script>
+        function fibonacci() {
+            let fib = [0, 1];
+            
+            for (let i = 2; ; i++) { // Vòng lặp for không giới hạn điều kiện dừng
+                fib[i] = fib[i - 1] + fib[i - 2];
+                
+                if (fib[i] % 5 === 0) {
+                    return fib[i]; // Trả về số Fibonacci đầu tiên chia hết cho 5
+                }
+            }
+        }
+
+        document.getElementById("result").textContent = "Số Fibonacci đầu tiên chia hết cho 5 là: " + fibonacci();
+    </script> -->
+</body>
+</html>
